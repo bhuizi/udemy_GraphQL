@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+h4 {
+    padding: 10px;
+}
+ul {
+    padding: 10px 0;
+    width: 300px;
+}
+ul li {
+    padding: 10px;
+}
