@@ -4,14 +4,12 @@ import { Link } from "react-router";
 
 import { query } from "../queries";
 import { mutation } from "../mutations";
-import { render } from "react-dom";
 
 class SongList extends Component {
   constructor(props) {
     super(props);
   }
   onSongDelete(id) {
-    console.log(id);
     this.props.mutate({
       variables: {
         id,
@@ -22,7 +20,9 @@ class SongList extends Component {
   renderSongs() {
     return this.props.data.songs.map(({ id, title }) => (
       <li key={id} className="collection-item">
+        <Link to={`/songs/${id}`}>
         {title}
+        </Link>
         <i
           className="material-icons right"
           onClick={() => this.onSongDelete(id)}

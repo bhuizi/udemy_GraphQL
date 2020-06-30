@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
 import { graphql } from "react-apollo";
+import { Link } from 'react-router';
 
+import LyricCreate from './LyricCreate';
+import LyricList from './LyricList';
 import { songQuery } from '../queries';
 class SongDetails extends Component {
     
     render(){
-        console.log(this.props);
+        const { song, loading } = this.props.data;
+
+        if(loading) {
+            return (<div>loading..</div>)
+        }
+    
         return(
             <div>
-                <h3>Song Details</h3>
+                <Link to="/">
+                    Back
+                </Link>
+                <h3>{song.title}</h3>
+                <LyricList lyrics={song.lyrics}/>
+                <LyricCreate songId={this.props.params.id}/>
             </div>
         )
     }
