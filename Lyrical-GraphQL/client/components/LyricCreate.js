@@ -18,7 +18,6 @@ class LyricCreate extends Component {
         }).then(() => this.setState({content: ''}));
     }
     render(){
-        console.log(this.props)
         return(
             <form onSubmit={this.handleSubmit.bind(this)}>
                 <label>Add a Lyric</label>
