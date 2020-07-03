@@ -1,10 +1,10 @@
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLId } = graphql;
+const { GraphQLObjectType, GraphQLID  } = require('graphql');
 
 const RootQueryType = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
-    dummyField: {type: GraphQLId}
+    dummyField: { type: GraphQLID}
   }
 });
 
